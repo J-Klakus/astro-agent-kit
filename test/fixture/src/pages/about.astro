@@ -1,0 +1,28 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://example.com/#organization",
+    name: "Fixture Site",
+    url: "https://example.com/",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "@id": "https://example.com/about/#page",
+    url: "https://example.com/about/",
+    name: "About",
+  },
+];
+---
+
+<Layout
+  title="About"
+  description="About the fixture site."
+  jsonLd={jsonLd}
+>
+  <h1>About</h1>
+</Layout>

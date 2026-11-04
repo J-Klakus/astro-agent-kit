@@ -1,0 +1,8 @@
+packages:
+  - test/fixture
+
+minimumReleaseAgeExclude:
+  - astro@7.4.5
+
+onlyBuiltDependencies:
+  - esbuild

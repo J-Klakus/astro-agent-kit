@@ -1,0 +1,72 @@
+{
+  "name": "astro-agent-kit",
+  "version": "0.1.0",
+  "description": "Zero-config agent discovery for Astro: llms.txt, schema feeds, schemamap, IndexNow, and markdown alternates.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Joe",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/J-Klakus/astro-agent-kit.git"
+  },
+  "homepage": "https://github.com/J-Klakus/astro-agent-kit#readme",
+  "bugs": {
+    "url": "https://github.com/J-Klakus/astro-agent-kit/issues"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./markdown": {
+      "types": "./dist/markdown.d.ts",
+      "import": "./dist/markdown.js",
+      "default": "./dist/markdown.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "astro-agent": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "withastro",
+    "astro-integration",
+    "llms.txt",
+    "indexnow",
+    "schemamap",
+    "json-ld",
+    "schema.org",
+    "markdown",
+    "agents",
+    "ai"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json && node -e \"require('node:fs').chmodSync('dist/cli.js', 0o755)\"",
+    "check": "tsc --noEmit",
+    "test": "sh scripts/test.sh",
+    "prepublishOnly": "pnpm build"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "astro": "^5.0.0 || ^6.0.0 || ^7.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.9",
+    "astro": "^7.4.5",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "packageManager": "pnpm@12.4.2"
+}
